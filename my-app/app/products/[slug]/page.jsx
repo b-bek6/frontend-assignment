@@ -3,14 +3,12 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {BsFillCartPlusFill} from 'react-icons/bs'
 import Image from 'next/image'
-import  { useRouter } from 'next/navigation'
 
 export default function page({params}) {
     const [product, setProduct] = useState([])
     useEffect(()=>{
         axios.get(`https://fakestoreapi.com/products/${params.slug}`)
         .then(response => {
-            console.log(params)
             setProduct(response.data);
       });
       },[]);
