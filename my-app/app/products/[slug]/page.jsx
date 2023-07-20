@@ -4,7 +4,7 @@ import axios from 'axios'
 import {BsFillCartPlusFill} from 'react-icons/bs'
 import Image from 'next/image'
 
-export default function page({params}) {
+export default function Page({params}) {
     const [product, setProduct] = useState([])
     useEffect(()=>{
         axios.get(`https://fakestoreapi.com/products/${params.slug}`)
