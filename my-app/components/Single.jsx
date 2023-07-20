@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-export default function SingleProduct({product}) {
+export default function Single({product}) {
   return (
     <div className='p-2 flex flex-col justify-around align-middle max-w-sm min-h-[500px] max-height-[500px] bg-white border border-gray-200 rounded-lg shadow'>
         <Image src={product.image} className='max-h-[250px]' alt='Product Image' height={200} width={200} />   

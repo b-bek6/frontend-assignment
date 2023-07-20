@@ -1,8 +1,7 @@
 'use client'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link';
-import SingleProduct from '@/components/SingleProduct';
+import SingleProduct from '@/components/Single';
 
 export default function Product() {
     const [products, setProducts] = useState([])

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
-import SingleProduct from './SingleProduct';
+import SingleProduct from './Single';
 
 
 export default function Product() {
