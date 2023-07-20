@@ -2,8 +2,10 @@
 import Image from "next/image"
 import Chair from "../assets/homechair.png"
 import Bulb from "../assets/bulb.png"
+
 export default function Home(){
-    return(<>
+    return(
+    <>
         <div className="bg-[#f3ecec] p-7 flex">
                 <div className="">
                     <Image src={Bulb} />

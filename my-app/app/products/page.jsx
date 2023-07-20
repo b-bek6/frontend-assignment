@@ -3,7 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import SingleProduct from '@/components/Single';
 
-export default function Product() {
+export default function page() {
     const [products, setProducts] = useState([])
     useEffect(()=>{
         axios.get(`https://fakestoreapi.com/products`)
