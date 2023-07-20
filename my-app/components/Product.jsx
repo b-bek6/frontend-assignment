@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image';
+import Link from 'next/link';
+import SingleProduct from './SingleProduct';
 
 
 export default function Product() {
@@ -20,17 +21,13 @@ export default function Product() {
                 {
                     products.map(product => {
                         return<>
-                        <div  className=' flex md:flex-col gap-4 p-2 flex-row items-center  md:justify-center align-middle min-h-[300px] rounded-md shadow-xl ease-in-out hover:-translate-y-1 hover:scale-105 hover:border-green-300 duration-100'>
-                                     <img src={product.image} alt="product Image" height={100} width={100}/>
-                                    <div className='md:text-center'>
-                                    <p className=' text-xl text-secondary'>{product.title}</p>
-                                    <p>Price: $ {product.price}</p>
-
-                                </div>
-                            </div>
+                            <SingleProduct product={product}/>
                         </>
                     })
                 }
+            </div>
+                <div className='flex justify-center align-middle mt-8'>
+                    <button className='btn mb-3 md:w-[200px]'> <Link href={'/products'}>View More</Link> </button>
             </div>
         </div>
     </div>

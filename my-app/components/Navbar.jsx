@@ -36,12 +36,12 @@ export default function Navbar() {
         <div>
             <nav>
                 <ul className="flex p-2 justify-center align-middle gap-[4vw] font-light">
-                    <li><Link href={"/"}>Home </Link></li>
-                    <li>Pages</li>
-                    <li>Products</li>
-                    <li>Blog</li>
-                    <li>Shop</li>
-                    <li>Contact</li>
+                    <Link href={"/"}><li> <button> Home</button>  </li></Link>
+                    <Link href={""}><li>Pages</li></Link>
+                    <Link href={"/products"}><li>Products</li></Link>
+                    <Link href={""}> <li>Blog</li></Link>
+                    <Link href={""}><li>Shop</li> </Link>
+                    <Link href={""}><li>Contact</li></Link>
                 </ul>
             </nav>
         </div>

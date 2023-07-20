@@ -17,6 +17,9 @@ module.exports = {
         secondary: "#FB2E86",
         header:"#0D0E43",
         poster:"#EEEFFB"
+      },
+      fontFamily:{
+        Poppins : ['Poppins']
       }
     },
   },
