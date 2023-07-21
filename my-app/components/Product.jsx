@@ -10,7 +10,7 @@ export default function Product() {
         axios.get(`https://fakestoreapi.com/products?limit=9`)
         .then(response => {
             console.log(response.data)
-          setProducts(response.data);
+            setProducts(response.data);
       });
       },[]);
   return (

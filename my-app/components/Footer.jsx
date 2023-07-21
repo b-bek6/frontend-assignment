@@ -5,7 +5,7 @@ export default function Footer() {
     <div className='bg-poster'>
     <div className='container md:flex gap-8 p-10 justify-around align-middle'>
       <div className='flex gap-2 flex-col'>
-        <label className='text-2xl'>HEKO</label>
+        <label className='text-2xl'>OnlineStore</label>
         <ul>
           {/* <li>Laptops & Computers</li> */}
           <li>Contact info</li>

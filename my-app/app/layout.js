@@ -2,8 +2,11 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
+import { store } from './redux/store'
+import { Providers } from './redux/provider'
 
-export default function Layout({ children }) {
+
+export function Layout({ children }) {
   return (
     <html lang="en">
       <body>
@@ -15,4 +18,13 @@ export default function Layout({ children }) {
       </body>
     </html>
   )
+}
+
+
+export default function withRedux({children}) {
+  return <>
+  <Providers>
+    <Layout children={children} />
+  </Providers>
+  </>
 }
