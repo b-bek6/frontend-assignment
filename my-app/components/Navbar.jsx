@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { setReduxSearch } from '@/app/redux/slice/searchSlice'
 import { useRouter } from 'next/navigation'
+import UserNavBar from './UserNavBar'
 
 export default function Navbar() {
     const router = useRouter()
@@ -22,6 +23,7 @@ export default function Navbar() {
 
   return (
     <>
+    <UserNavBar />
     <header >
         <div className="p-2 flex justify-center">
             <div className="container py-2 gap-2 flex flex-col justify-between items-center md:flex-row ">

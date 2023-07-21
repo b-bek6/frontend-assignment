@@ -52,17 +52,6 @@ export default function Page({ params }) {
                     <div className='container grid justify-center m-8'>
                         <div className='flex flex-col md:gap-8 gap-4 p-2 md:flex-row items-center min-h-[500px] md:min-w-[900px] md:justify-center align-middle text-left rounded-md shadow-xl'>
                             <Image src={product.image} className='' alt='Product Image' height={200} width={200} />
-                            {/* <div className='md:text-left grid gap-4 text-left max-w-[300px]'>
-                    <div>
-                        <p className='mb-2 text-2xl font-bold  text-gray-900'>{product.title}</p>
-                        <p>Price: $ {product.price}</p>
-                        <p>Category: {product.category}</p>
-                        <p>Description: {product.description}</p>
-                    </div>
-                    <div>
-                    <BsFillCartPlusFill className='text-4xl'/>
-                    </div>
-                </div> */}
                             <div className='md:text-left grid gap-4 text-left max-w-[300px]'>
                                 <div>
                                     <div>
