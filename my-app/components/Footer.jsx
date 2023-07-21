@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='bg-poster'>
-    <div className='container md:flex gap-8 p-10 justify-around align-middle'>
+    <div className='bg-poster  text-[#9DA0AE]' >
+    <div className='md:flex gap-8 p-10 justify-around align-middle'>
       <div className='flex gap-2 flex-col'>
-        <label className='text-2xl'>OnlineStore</label>
+        <label className='text-2xl text-black'>OnlineStore</label>
         <ul>
           {/* <li>Laptops & Computers</li> */}
           <li>Contact info</li>
@@ -13,7 +13,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className='flex gap-2 flex-col'>
-        <label className='text-2xl '>Categories</label>
+        <label className='text-2xl text-black'>Categories</label>
         <ul>
           <li>Laptops & Computers</li>
           <li>Cameras & Photography</li>
@@ -23,7 +23,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className='flex gap-2 flex-col'>
-        <label className='text-2xl '>Customer Care</label>
+        <label className='text-2xl text-black'>Customer Care</label>
         <ul>
           <li>My Account</li>
           <li>Discount</li>
@@ -33,7 +33,7 @@ export default function Footer() {
         </ul>
         </div>
       <div className='flex gap-2 flex-col'>
-        <label className='text-2xl '>Pages</label>
+        <label className='text-2xl text-black'>Pages</label>
         <ul>
           <li>Blog</li>
           <li>Browse the Shop</li>
@@ -44,9 +44,8 @@ export default function Footer() {
         </ul>
       </div>
     </div>
-    
-    <div className=' flex justify-center bg-black text-white p-6 text-sm absolute left-0 right-0 bottom-0'>
-        © 2023 Jobs Portal. Designed By Bibek Ghimire.
+        <div className=' flex justify-center bg-[#E7E4F8] p-6 text-sm '>
+        © 2023 OnlineStore. Designed By Bibek Ghimire.
     </div>
     </div>
   )

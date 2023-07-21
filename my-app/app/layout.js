@@ -10,9 +10,11 @@ export function Layout({ children }) {
   return (
     <html lang="en">
       <body>
-        <main className='app'>
+        <main className='flex flex-col app'>
           <Navbar />
+          <div className='min-h-[50vh]'>
           {children}
+          </div>
           <Footer />
         </main>
       </body>

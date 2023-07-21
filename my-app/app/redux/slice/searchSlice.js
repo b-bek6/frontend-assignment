@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    value: null, // {name}
+    value: '',
 }
 
 export const searchSlice = createSlice({
@@ -10,13 +10,10 @@ export const searchSlice = createSlice({
     initialState,
     reducers: {
         "setReduxSearch": (state, action) => {
-            console.log(action)
             state.value = action.payload
-        }
+        },
     },
 })
 
-// Action creators are generated for each case reducer function
-export const { setReduxSearch, logout, stopLoading } = searchSlice.actions
-
+export const { setReduxSearch } = searchSlice.actions
 export default searchSlice.reducer 

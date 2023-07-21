@@ -5,11 +5,10 @@ import {AiOutlineShoppingCart, AiOutlineSearch} from 'react-icons/ai'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { setReduxSearch } from '@/app/redux/slice/searchSlice'
-
-
-
+import { useRouter } from 'next/navigation'
 
 export default function Navbar() {
+    const router = useRouter()
     const dispatch = useDispatch();
     const  search  = useSelector(store => {return store.search?.value})
     const [term, setTerm] = useState("");
@@ -17,6 +16,8 @@ export default function Navbar() {
         e.preventDefault();
         dispatch(setReduxSearch(term.toLowerCase()))
         console.log(search)
+        router.push('/products');
+        
     }
 
   return (
@@ -33,8 +34,8 @@ export default function Navbar() {
             <nav>
                 <ul className="flex p-2 justify-center align-middle gap-[4vw] font-light">
                     <Link href={"/"}><li> <button> Home</button>  </li></Link>
-                    <Link href={""}><li>Pages</li></Link>
                     <Link href={"/products"}><li>Products</li></Link>
+                    <Link href={"/category"}><li>Categories</li></Link>
                     <Link href={""}> <li>Blog</li></Link>
                     <Link href={""}><li>Shop</li> </Link>
                     <Link href={""}><li>Contact</li></Link>

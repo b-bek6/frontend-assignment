@@ -14,7 +14,7 @@ export default function Product() {
       });
       },[]);
   return (
-    <div className='bg-white'>
+    <div>
         <div className=' p-6 text-2xl flex justify-center'>All Popular Products</div>
         <div className='container m-4'>
             <div className='grid md:grid-cols-3 gap-4'>
