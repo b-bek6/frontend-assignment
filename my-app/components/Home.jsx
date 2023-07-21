@@ -6,7 +6,7 @@ import Bulb from "../assets/bulb.png"
 export default function Home(){
     return(
     <>
-        <div className="bg-[#f3ecec] p-7 flex">
+        <div className="bg-[#f3ecec] p-7 flex flex-col md:flex-row ">
                 <div className="">
                     <Image src={Bulb} />
                 </div>
@@ -17,7 +17,7 @@ export default function Home(){
                     <button className="bg-secondary text-white p-2 w-[100px]">Shop Now</button>
 
                 </div>
-                <div>
+                <div className="hidden md:flex">
                     <Image src={Chair} />
                 </div>
             </div>
