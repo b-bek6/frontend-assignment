@@ -1,10 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react';
-import {BiCube} from 'react-icons/bi'
 import axios from 'axios';
 import Category from '@/components/Category';
 
-export default function Categories() {
+export default function Page() {
   const [categories, setCategories] = useState([])
   useEffect(()=>{
     axios.get('https://fakestoreapi.com/products/categories')

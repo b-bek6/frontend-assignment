@@ -11,7 +11,7 @@ export default function Single({product}) {
             <p className='mb-2 text-2xl font-bold  text-gray-900'>{product.title}</p>
             <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'> Price: $ {product.price}</p>
             <Link href={`/products/${product.id}`}>
-                <button className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-400 rounded-lg '>Veiw Details</button>
+                <button className='inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-secondary rounded-lg '>Veiw Details</button>
             </Link>
         </div>
     </div>
