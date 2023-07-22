@@ -4,7 +4,8 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import { store } from './redux/store'
 import { Providers } from './redux/provider'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Layout({ children }) {
   return (
@@ -16,6 +17,7 @@ export function Layout({ children }) {
           {children}
           </div>
           <Footer />
+          <ToastContainer/>
         </main>
       </body>
     </html>
