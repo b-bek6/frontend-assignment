@@ -46,7 +46,7 @@ export default function page() {
         } )
         .then(res => {
             console.log("sucess")
-            // router.push('/login')
+            router.push('/login')
             toast.success('User created Successfully!', {
                 position: "bottom-right",
                 autoClose: 5000,
