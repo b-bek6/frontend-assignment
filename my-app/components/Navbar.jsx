@@ -17,8 +17,7 @@ export default function Navbar() {
         e.preventDefault();
         dispatch(setReduxSearch(term.toLowerCase()))
         console.log(search)
-        router.push('/products');
-        
+
     }
 
   return (
@@ -49,7 +48,9 @@ export default function Navbar() {
                 setTerm(e.target.value)
             }} className="border w-full outline-none px-2" />
             <button className="bg-secondary text-white p-2 inline">
-                <AiOutlineSearch className='inline' type='submit'/>
+                <Link href={'/products'}>
+                    <AiOutlineSearch className='inline' type='submit'/>
+                </Link>
             </button>
         </form>
             </div>
