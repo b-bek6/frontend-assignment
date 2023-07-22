@@ -9,31 +9,44 @@ import { toast } from 'react-toastify';
 export default function page() {
     const router = useRouter();
     const [user, setUser] = useState({
-        username:"",
-        email:"",
-        password:"",
-        name:{
+            username:'',
+            email:'',
+            password:'',
             firstname:'',
-            lastname:''
-        },
-        address:{
+            lastname:'',
             city:'',
             street:'',
             number:'',
             zipcode:'',
-            geolocation:{
-                lat:'',
-                long:''
-            }
-        },
-        phone:''
-    })
+            lat:'',
+            long:'',
+            phone:''
+    });
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://fakestoreapi.com/users', user )
+        axios.post('https://fakestoreapi.com/users', {
+            username:user.username,
+            email:user.email,
+            password:user.password,
+            name:{
+                firstname:user.firstname,
+                lastname:user.lastname
+            },
+            address:{
+                city:user.city,
+                street:user.street,
+                number:user.number,
+                zipcode:user.zipcode,
+                geolocation:{
+                    lat:user.lat,
+                    long:user.long
+                }
+            },
+            phone:user.phone
+        } )
         .then(res => {
             console.log("sucess")
-            router.push('/login')
+            // router.push('/login')
             toast.success('User created Successfully!', {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -47,35 +60,7 @@ export default function page() {
         })
     }
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        const nestedNames = name.split('.');
-        if (nestedNames.length === 2) {
-          const [nestedProperty, subProperty] = nestedNames;
-          setUser((prevUser) => ({
-            ...prevUser,
-            [nestedProperty]: {
-              ...prevUser[nestedProperty],
-              [subProperty]: value
-            }
-          }));
-        }else if (nestedNames.length === 3 && nestedNames[0] === 'address' && nestedNames[1] === 'geolocation') {
-            const [parentProperty, nestedProperty, subProperty] = nestedNames;
-            setUser((prevUser) => ({
-              ...prevUser,
-              [parentProperty]: {
-                ...prevUser[parentProperty],
-                [nestedProperty]: {
-                  ...prevUser[parentProperty][nestedProperty],
-                  [subProperty]: value
-                }
-              }
-            }))
-        } else {
-          setUser((prevUser) => ({
-            ...prevUser,
-            [name]: value
-          }));
-        }
+          setUser({...user, [e.target.name]:e.target.value});
     }
   return (
     <div>
@@ -146,11 +131,11 @@ export default function page() {
                     <label htmlFor="website" className='text-lg  text-light-primary'>First Name <span className='text-red-500'>*</span> </label>
                     <input
                       type="text"
-                      name='name.firstname'
+                      name='firstname'
                       placeholder='Firstname'
                       className='border outline-none p-1.5 '
                       onChange={handleChange}
-                      value={user.name.firstname}
+                      value={user.firstname}
                       required
                     />
                   </div>
@@ -160,11 +145,11 @@ export default function page() {
                     <label htmlFor="website" className='text-lg  text-light-primary'>Last Name <span className='text-red-500'>*</span> </label>
                     <input
                       type="text"
-                      name='name.lastname'
+                      name='lastname'
                       placeholder='Lastname'
                       className='border outline-none p-1.5 '
                       onChange={handleChange}
-                      value={user.name.lastname}
+                      value={user.lastname}
                     />
                   </div>
                 </div>
@@ -178,9 +163,9 @@ export default function page() {
                       type="text"
                       placeholder='city'
                       className='border outline-none p-1.5 '
-                      name='address.city'
+                      name='city'
                       onChange={handleChange}
-                      value={user.address.city}
+                      value={user.city}
                       required
                     />
                   </div>
@@ -192,9 +177,9 @@ export default function page() {
                       type="text"
                       placeholder='street'
                       className='border outline-none p-1.5 '
-                      name='address.street'
+                      name='street'
                       onChange={handleChange}
-                      value={user.address.street}
+                      value={user.street}
                     />
                   </div>
                 </div>
@@ -207,9 +192,9 @@ export default function page() {
                       type="number"
                       placeholder='Location Number'
                       className='border outline-none p-1.5 '
-                      name='address.number'
+                      name='number'
                       onChange={handleChange}
-                      value={user.address.number}
+                      value={user.number}
                     />
                   </div>
                   <div
@@ -220,9 +205,9 @@ export default function page() {
                       type="number"
                       placeholder='Zip Code'
                       className='border outline-none p-1.5 '
-                      name='address.zipcode'
+                      name='zipcode'
                       onChange={handleChange}
-                      value={user.address.zipcode}
+                      value={user.zipcode}
                       required
                     />
                   </div>
@@ -234,11 +219,11 @@ export default function page() {
                     <label htmlFor="website" className='text-lg  text-light-primary'>Latitude</label>
                     <input
                       type="number"
-                      name='address.geolocation.lat'
+                      name='lat'
                       placeholder='Latitude'
                       className='border outline-none p-1.5 '
                       onChange={handleChange}
-                      value={user.address.geolocation.lat}
+                      value={user.lat}
                     />
                   </div>
                   <div
@@ -247,11 +232,11 @@ export default function page() {
                     <label htmlFor="website" className='text-lg  text-light-primary'>Longitude</label>
                     <input
                       type="number"
-                      name='address.geolocation.long'
+                      name='long'
                       placeholder='Longitude'
                       className='border outline-none p-1.5 '
                       onChange={handleChange}
-                      value={user.address.geolocation.long}
+                      value={user.long}
                     />
                   </div>
                 </div>
